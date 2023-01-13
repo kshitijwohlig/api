@@ -12,4 +12,4 @@ const Prac1 = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model('pracdata',Prac1)
+module.exports = mongoose.model('postedfirstdata',Prac1)

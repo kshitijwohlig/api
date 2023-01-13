@@ -33,9 +33,10 @@ const axios = require("axios");
 const practise = async(req,res)=>{
    try{
     const result = await axios.get('http://localhost:7200/prac2/');
-    console.log(result,"results are here");
-    // req.status(200).send(result.data)
-    res.send(res.data);
+    console.log(result.data,"results are here");
+    // res.status(200).json(result.data)
+    res.json(result.data)
+    // res.json(result);
    }catch(err){
     res.status(500).json('error:' + err);
    }

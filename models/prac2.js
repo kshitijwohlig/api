@@ -5,13 +5,13 @@ const Prac2 = new mongoose.Schema(
     title: String,
     postedBy: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "pracdata"
+        ref: "postedfirstdata"
     }
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model('pracdatas',Prac2)
+module.exports = mongoose.model('posteddata',Prac2)
 
 
 
