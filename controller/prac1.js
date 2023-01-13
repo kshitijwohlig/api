@@ -1,4 +1,4 @@
-const Prac1  = require("../models/prac1");
+const Prac1 = require("../models/prac1");
 
 // 1. Create Data
 // const createData = async (req, res) => {
@@ -14,18 +14,26 @@ const Prac1  = require("../models/prac1");
 // }
 
 module.exports = {
-    createData: async(req,res)=>{
-        const { name,email } = req.body
-        console.log(name, email,"data");
-        const data = await Prac1.create({
-            name,
-            email
-        })
-        res.status(201).send(data);
-        console.log("data",data);
-        return res.send(data);
+  createData: async (req, res) => {
+    const { name, email } = req.body;
+    console.log(name, email, "data");
+    const data = await Prac1.create({
+      name,
+      email,
+    });
+    res.status(201).send(data);
+    console.log("data", data);
+    return res.send(data);
+  },
+  getPrac1: async (req, res) => {
+    try {
+      const result = await Prac1.find();
+      res.status(200).json(result);
+    } catch (err) {
+      res.status(500).json(err.message);
     }
-}
+  },
+};
 
 // 2. Get Data
 
@@ -40,9 +48,3 @@ module.exports = {
 // }
 
 // module.exports = { createData, getPrac1}
-
-
-
-
-
-
